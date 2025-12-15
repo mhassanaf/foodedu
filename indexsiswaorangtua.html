@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -59,46 +60,30 @@
     <!-- ================= HERO ================= -->
     <section id="beranda" class="hero">
         <!-- Ganti bagian hero-bg dengan ini untuk optimasi lebih baik -->
-<div class="hero-bg">
-    <picture>
-        <!-- WebP untuk browser modern -->
-        <source 
-            media="(min-width: 1200px)" 
-            srcset="asset/logo/banner-foodedu.WebP"
-            type="image/webp">
-        <source 
-            media="(min-width: 768px)" 
-            srcset="asset/logo/banner-foodedu.WebP" 
-            type="image/webp">
-        <source 
-            srcset="asset/logo/banner-foodedu.WebP" 
-            type="image/webp">
-        
-        <!-- Fallback JPEG -->
-        <source 
-            media="(min-width: 1200px)" 
-            srcset="asset/logo/banner-foodedu.jpeg">
-        <source 
-            media="(min-width: 768px)" 
-            srcset="asset/logo/banner-foodedu.jpeg">
-        <img 
-            src="asset/logo/banner-foodedu.jpeg" 
-            alt="Banner makanan sehat"
-            loading="eager">
-    </picture>
-</div>
+        <div class="hero-bg">
+            <div class="hero-bg">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="/asset/logo/banner-foodedu.webp" type="image/webp">
+                    <source media="(min-width: 768px)" srcset="/asset/logo/banner-foodedu.webp" type="image/webp">
+                    <source srcset="/asset/logo/banner-foodedu.webp" type="image/webp">
 
-        <div class="hero-content reveal">
-            <h1>FOODEDU</h1>
-            <p>
-                Platform edukasi makanan yang membantu memonitoring kualitas dan memberikan pengetahuan tentang makanan bergizi melalui edukasi, pelaporan, dan partisipasi dari semua pihak.
-            </p>
-
-            <div class="hero-buttons">
-                <button class="btn-primary">Jelajahi Platform</button>
-                <button class="btn-secondary">Pelajari Lebih Lanjut</button>
+                    <img src="/asset/logo/banner-foodedu.jpeg" alt="Banner makanan sehat" loading="eager"
+                        style="width: 100%; height: auto;">
+                </picture>
             </div>
-        </div>
+
+            <div class="hero-content reveal">
+                <h1>FOODEDU</h1>
+                <p>
+                    Platform edukasi makanan yang membantu memonitoring kualitas dan memberikan pengetahuan tentang
+                    makanan bergizi melalui edukasi, pelaporan, dan partisipasi dari semua pihak.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="btn-primary">Jelajahi Platform</button>
+                    <button class="btn-secondary">Pelajari Lebih Lanjut</button>
+                </div>
+            </div>
     </section>
 
     <!-- ================= AUDIENCE ================= -->
@@ -152,7 +137,8 @@
         <div class="footer-left">
             <h3>FOODEDU</h3>
             <p>
-                FoodEdu adalah platform edukatif yang membantu siswa, orang tua, sekolah, dan pengelola program makanan meningkatkan kualitas makanan melalui edukasi dan monitoring.
+                FoodEdu adalah platform edukatif yang membantu siswa, orang tua, sekolah, dan pengelola program makanan
+                meningkatkan kualitas makanan melalui edukasi dan monitoring.
             </p>
         </div>
 
@@ -206,14 +192,14 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({})
             })
-            .then(response => response.json())
-            .then(data => {
-                window.location.href = 'index.html';
-            })
-            .catch(error => {
-                console.error('Logout error:', error);
-                window.location.href = 'index.html';
-            });
+                .then(response => response.json())
+                .then(data => {
+                    window.location.href = 'index.html';
+                })
+                .catch(error => {
+                    console.error('Logout error:', error);
+                    window.location.href = 'index.html';
+                });
         }
 
         // Setup logout button
@@ -223,4 +209,5 @@
         document.addEventListener('DOMContentLoaded', checkSession);
     </script>
 </body>
+
 </html>
