@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FoodEdu – Edukasi Gizi & Kelayakan Makanan</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar-home">
+        <!-- Logo -->
+        <a href="indexsiswaorangtua.html" class="logo">
+            <img src="asset/logo/foodedu.png" alt="FoodEdu Logo" />
+        </a>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Navigation -->
+        <nav class="nav-menu" id="navMenu">
+            <a href="#beranda" class="nav-item active">Beranda</a>
+
+            <div class="dropdown">
+                <a class="nav-item dropdown-toggle">
+                    Program <span class="arrow"></span>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="gizi.html#informasi-gizi">Informasi Gizi Seimbang</a>
+                    <a href="gizi.html#kelayakan">Edukasi Kelayakan Makanan</a>
+                </div>
+            </div>
+
+            <a href="pengaduan.php" class="nav-item pengaduan-link">Pengaduan</a>
+            <a href="saran.php" class="nav-item saran-link">Saran</a>
+
+            <!-- User Profile Buttons (Logged In) -->
+            <div class="nav-buttons">
+                <div class="user-profile">
+                    <span class="username" id="navUsername">User</span>
+                    <button class="btn-logout" id="logoutBtn">Keluar</button>
+                </div>
+            </div>
+        </nav>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <section id="beranda" class="hero">
+        <!-- Ganti bagian hero-bg dengan ini untuk optimasi lebih baik -->
+<div class="hero-bg">
+    <picture>
+        <!-- WebP untuk browser modern -->
+        <source 
+            media="(min-width: 1200px)" 
+            srcset="asset/logo/banner-foodedu.WebP"
+            type="image/webp">
+        <source 
+            media="(min-width: 768px)" 
+            srcset="asset/logo/banner-foodedu.WebP" 
+            type="image/webp">
+        <source 
+            srcset="asset/logo/banner-foodedu.WebP" 
+            type="image/webp">
+        
+        <!-- Fallback JPEG -->
+        <source 
+            media="(min-width: 1200px)" 
+            srcset="asset/logo/banner-foodedu.jpeg">
+        <source 
+            media="(min-width: 768px)" 
+            srcset="asset/logo/banner-foodedu.jpeg">
+        <img 
+            src="asset/logo/banner-foodedu.jpeg" 
+            alt="Banner makanan sehat"
+            loading="eager">
+    </picture>
+</div>
+
+        <div class="hero-content reveal">
+            <h1>FOODEDU</h1>
+            <p>
+                Platform edukasi makanan yang membantu memonitoring kualitas dan memberikan pengetahuan tentang makanan bergizi melalui edukasi, pelaporan, dan partisipasi dari semua pihak.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="btn-primary">Jelajahi Platform</button>
+                <button class="btn-secondary">Pelajari Lebih Lanjut</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= AUDIENCE ================= -->
+    <section id="untuk-siapa" class="audience-section">
+        <h2 class="reveal">Untuk Siapa FOODEDU?</h2>
+
+        <div class="audience-list">
+
+            <article class="audience-card reveal-left">
+                <img src="asset/logo/siswa.png" alt="Ikon siswa" />
+                <div>
+                    <h3>Siswa</h3>
+                    <p>Belajar tentang gizi seimbang dan kesadaran makan sehat.</p>
+                </div>
+            </article>
+
+            <article class="audience-card reveal-right">
+                <img src="asset/logo/ortu.png" alt="Ikon orang tua" />
+                <div>
+                    <h3>Orang Tua</h3>
+                    <p>Pantau kualitas makanan dan berikan umpan balik perbaikan.</p>
+                </div>
+            </article>
+
+            <article class="audience-card reveal-left">
+                <img src="asset/logo/sekolah.png" alt="Ikon sekolah" />
+                <div>
+                    <h3>Pihak Sekolah</h3>
+                    <p>Kelola program makanan dan kirim laporan kepada pihak terkait.</p>
+                </div>
+            </article>
+
+            <article class="audience-card reveal-right">
+                <img src="asset/logo/mbg.png" alt="Ikon MBG" />
+                <div>
+                    <h3>Pihak MBG</h3>
+                    <p>Monitor dan evaluasi program makanan sekolah secara real-time.</p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ================= PREVIEW GIZI & KELAYAKAN ================= -->
+    <section class="audience-section" data-gizi-preview>
+        <!-- Konten dinamis akan diisi oleh js/gizi-content.js -->
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer reveal">
+        <div class="footer-left">
+            <h3>FOODEDU</h3>
+            <p>
+                FoodEdu adalah platform edukatif yang membantu siswa, orang tua, sekolah, dan pengelola program makanan meningkatkan kualitas makanan melalui edukasi dan monitoring.
+            </p>
+        </div>
+
+        <div class="footer-right">
+            <h4>Kontak</h4>
+            <p><strong>Email:</strong> support@foodedu.id</p>
+            <p><strong>Instagram:</strong> @foodedu</p>
+            <p><strong>Lokasi:</strong> Indonesia</p>
+        </div>
+    </footer>
+
+    <!-- Gizi Content JS -->
+    <script src="js/gizi-content.js"></script>
+    <!-- MAIN JS -->
+    <script src="main.js"></script>
+
+    <!-- Session Check & User Display -->
+    <script>
+        // Initialize pengaduan link handler
+        if (typeof initPengaduanLink === 'function') {
+            initPengaduanLink();
+        }
+        // Check if user is logged in
+        function checkSession() {
+            // Fetch session info from server
+            fetch('auth/check_session.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.logged_in) {
+                        // User is logged in, display username
+                        const usernameEl = document.getElementById('navUsername');
+                        if (usernameEl) {
+                            usernameEl.textContent = data.name || data.username || 'User';
+                        }
+                        console.log('User logged in:', data.name || data.username);
+                    } else {
+                        // User not logged in, redirect to auth.html
+                        window.location.href = 'auth.html';
+                    }
+                })
+                .catch(error => {
+                    console.error('Session check error:', error);
+                    window.location.href = 'auth.html';
+                });
+        }
+
+        // Logout function
+        function logout() {
+            fetch('auth/logout.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                window.location.href = 'index.html';
+            })
+            .catch(error => {
+                console.error('Logout error:', error);
+                window.location.href = 'index.html';
+            });
+        }
+
+        // Setup logout button
+        document.getElementById('logoutBtn').addEventListener('click', logout);
+
+        // Check session on page load
+        document.addEventListener('DOMContentLoaded', checkSession);
+    </script>
+</body>
+</html>

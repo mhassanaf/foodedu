@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FOODEDU - Login & Sign Up</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+
+<body class="auth-body">
+  <div class="auth-background"></div>
+
+  <!-- Back to Home Button -->
+  <a href="index.html" class="back-home-btn" aria-label="Kembali ke Beranda">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5"></path>
+      <path d="M12 19l-7-7 7-7"></path>
+    </svg>
+    <span>Beranda</span>
+  </a>
+
+  <main class="auth-container">
+    <!-- Menu Auth -->
+    <div class="auth-panel" id="menuAuth">
+      <div class="auth-logo-section">
+        <img src="asset/logo/foodedu.png" alt="FoodEdu" class="auth-logo-img">
+        <h1 class="auth-title">FOODEDU</h1>
+        <p class="auth-subtitle">Platform Edukasi Makanan Bergizi</p>
+      </div>
+
+      <div class="auth-btn-row">
+        <button class="auth-btn auth-btn-primary" id="btnSignup">
+          <span>Sign Up</span>
+        </button>
+        <button class="auth-btn auth-btn-secondary" id="btnLogin">
+          <span>Log In</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Sign Up Form -->
+    <form class="auth-panel hidden" id="signupForm" autocomplete="off">
+      <div class="auth-form-header">
+        <h2>Daftar Akun</h2>
+        <p>Bergabung dengan FoodEdu sekarang</p>
+      </div>
+
+      <div class="auth-form-group">
+        <label for="su_name">Nama Lengkap <span class="required">*</span></label>
+        <input type="text" id="su_name" name="su_name" required placeholder="Masukkan nama lengkap" />
+      </div>
+
+      <div class="auth-form-group">
+        <label for="su_email">Email <span class="required">*</span></label>
+        <input type="email" id="su_email" name="su_email" required placeholder="contoh@email.com" />
+      </div>
+
+      <div class="auth-form-group">
+        <label for="su_phone">No Handphone <span class="required">*</span></label>
+        <input type="text" id="su_phone" name="su_phone" required placeholder="08xxxxxxxxxx" />
+      </div>
+
+      <div class="auth-form-group">
+        <label>Pilih Peran <span class="required">*</span></label>
+        <div class="auth-radio-group">
+          <label class="auth-radio-label">
+            <input type="radio" name="role" value="siswa" required />
+            <span>Siswa</span>
+          </label>
+          <label class="auth-radio-label">
+            <input type="radio" name="role" value="ortu" required />
+            <span>Orang Tua</span>
+          </label>
+          <label class="auth-radio-label">
+            <input type="radio" name="role" value="sekolah" required />
+            <span>Pihak Sekolah</span>
+          </label>
+          <label class="auth-radio-label">
+            <input type="radio" name="role" value="mbg" required />
+            <span>Pihak MBG</span>
+          </label>
+        </div>
+      </div>
+
+      <div id="extraFields" class="auth-extra-fields"></div>
+
+      <div id="signupError" class="auth-error-message"></div>
+
+      <div class="auth-form-actions">
+        <button type="submit" class="auth-btn auth-btn-primary" id="submitSignup">
+          <span>Buat Akun</span>
+        </button>
+        <button type="button" class="auth-btn auth-btn-link" id="backFromSignup">
+          <span>Kembali</span>
+        </button>
+      </div>
+    </form>
+
+    <!-- Login Form -->
+    <form class="auth-panel hidden" id="loginForm" autocomplete="off">
+      <div class="auth-form-header">
+        <h2>Masuk ke Akun</h2>
+        <p>Selamat datang kembali!</p>
+      </div>
+
+      <div class="auth-form-group">
+        <label for="li_user">Username <span class="required">*</span></label>
+        <input type="text" id="li_user" name="li_user" required placeholder="Masukkan username" />
+      </div>
+
+      <div class="auth-form-group">
+        <label for="li_pass">Password <span class="required">*</span></label>
+        <input type="password" id="li_pass" name="li_pass" required placeholder="Masukkan password" />
+      </div>
+
+      <div id="loginError" class="auth-error-message"></div>
+
+      <div class="auth-form-actions">
+        <button type="submit" class="auth-btn auth-btn-primary" id="submitLogin">
+          <span>Masuk</span>
+        </button>
+        <button type="button" class="auth-btn auth-btn-link" id="backFromLogin">
+          <span>Kembali</span>
+        </button>
+      </div>
+    </form>
+
+    <!-- Welcome Panel / Success Modal -->
+    <div class="auth-panel hidden" id="welcomePanel">
+      <div class="confetti top-left"></div>
+      <div class="confetti bottom-right"></div>
+      <div id="resultCard" class="result-card">
+        <button class="close-btn" id="resultClose" aria-label="Close">×</button>
+        <img src="asset/logo/foodedu.png" alt="FoodEdu" class="auth-logo" id="resultLogo">
+        <h2 id="resultTitle"></h2>
+        <p id="resultMessage"></p>
+        <div id="autoDismissBar" class="auto-dismiss-bar hidden">
+          <div id="barFill" class="bar-fill"></div>
+        </div>
+        <div class="form-actions">
+          <button class="auth-btn auth-btn-primary" id="btnGoLogin">
+            <span>Masuk ke Login</span>
+          </button>
+          <button class="auth-btn auth-btn-secondary hidden" id="btnRetry">
+            <span>Coba Lagi</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/auth.js"></script>
+</body>
+
+</html>
