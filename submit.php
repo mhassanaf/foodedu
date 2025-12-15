@@ -46,11 +46,12 @@ try {
     // Insert into database
     $stmt = $pdo->prepare("
         INSERT INTO saran 
-        (nama_lengkap, nama_sekolah, saran_dan_masukan, alasan, status, created_at)
-        VALUES (:nama_lengkap, :nama_sekolah, :saran_dan_masukan, :alasan, 'pending', NOW())
+        (:user_id, nama_lengkap, nama_sekolah, saran_dan_masukan, alasan, status, created_at)
+        VALUES (:user_id, :nama_lengkap, :nama_sekolah, :saran_dan_masukan, :alasan, 'pending', NOW())
     ");
 
     $stmt->execute([
+        'user_id' => $user_id,
         'nama_lengkap' => $nama_lengkap,
         'nama_sekolah' => $nama_sekolah,
         'saran_dan_masukan' => $saran_dan_masukan,
